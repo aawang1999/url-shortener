@@ -1,12 +1,10 @@
 <div class="container my-5">
   <h1 class="d-flex justify-content-center mb-5">URL Shortener</h1>
-  <form action="/" method="POST" class="needs-validation" novalidate>
-    <div class="mb-3">
-      <input type="url" class="form-control mb-3" name="url" id="url" placeholder="Input URL here" aria-describedby=""
-        required>
-      <div class="invalid-feedback">Please input a URL.</div>
-    </div>
-    <button type="submit" class="btn btn-primary">Shorten</button>
+  <form action="/" method="POST" class="d-flex flex-column needs-validation" novalidate>
+    <input type="url" class="form-control form-control-lg mb-3" name="url" id="url" placeholder="Input URL here"
+      aria-describedby="" required>
+    <div class="invalid-feedback mb-3">Please input a URL.</div>
+    <button type="submit" class="btn btn-primary btn-lg">Shorten</button>
   </form>
 </div>
 
