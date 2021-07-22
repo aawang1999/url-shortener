@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.post('/', (req, res) => {
+  res.render('success', { url: req.body.url, shortUrl: '<Short URL here.>' })
+})
+
 app.listen(PORT, () => {
   console.log(`Express is running on port ${PORT}.`)
 })
