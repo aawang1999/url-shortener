@@ -21,7 +21,9 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const url = req.body.url
+  const url = req.body.url.trim().replace(/\/$/, '')
+
+  if (!url) res.redirect('/')
 
   let checkUrl = async (url) => {
     try {
