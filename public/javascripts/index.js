@@ -1,8 +1,9 @@
-const shortUrl = document.querySelector('#short-url')
-const copyUrl = document.querySelector('#copy-url')
+const form = document.querySelector('.needs-validation')
 
-shortUrl.innerText = document.URL + shortUrl.innerText
-
-copyUrl.addEventListener('click', async () => {
-  await navigator.clipboard.writeText(shortUrl.innerText)
-})
+form.addEventListener('submit', function onFormSubmitted(event) {
+  if (!form.checkValidity()) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+  form.classList.add('was-validated')
+}, false)
