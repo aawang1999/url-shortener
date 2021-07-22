@@ -7,7 +7,7 @@ function getShortUrl(len) {
   const lowercase = 'abcdefghijklmnopqrstuvwxyz'
   const uppercase = lowercase.toUpperCase()
   const numbers = '1234567890'
-  let allSymbols = lowercase + uppercase + numbers
+  const allSymbols = lowercase + uppercase + numbers
   let shortUrl = ''
 
   for (let i = 0; i < len; i++) {

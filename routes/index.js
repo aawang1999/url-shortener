@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
 
   if (!url) res.redirect('/')
 
-  let checkUrl = async (url) => {
+  const checkUrl = async (url) => {
     try {
       const shortUrl = await ShortUrl.find({ url }).lean().exec()
       if (shortUrl.length === 1) {
@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
     }
   }
 
-  let checkId = async (id) => {
+  const checkId = async (id) => {
     try {
       const findId = await ShortUrl.find({ id }).lean().exec()
       return findId.length
