@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('Hello world.')
+  res.render('index')
 })
 
 app.listen(PORT, () => {
