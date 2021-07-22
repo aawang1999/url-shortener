@@ -7,6 +7,19 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
+router.get('/:id', (req, res) => {
+  ShortUrl.find({ id: req.params.id })
+    .lean()
+    .then(result => {
+      if (result.length === 1) {
+        res.redirect(result[0].url)
+      } else {
+        res.redirect('/')
+      }
+    })
+    .catch(error => console.log(error))
+})
+
 router.post('/', async (req, res) => {
   const url = req.body.url
 
