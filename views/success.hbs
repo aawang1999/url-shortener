@@ -3,6 +3,8 @@
   <input type="url" class="form-control mb-3" name="url" id="url" placeholder="Input URL here" aria-describedby=""
     value="{{url}}" disabled readonly>
   <p class="mb-3">Success! Please use this link:</p>
-  <p class="mb-3">{{shortUrl}}</p>
-  <button type="button" class="btn btn-primary">Copy</button>
+  <a href="/{{shortUrl}}" class="mb-3" id="short-url">{{shortUrl}}</a>
+  <button type="button" class="btn btn-primary" id="copy-url">Copy</button>
 </div>
+
+<script src="./javascripts/index.js"></script>
